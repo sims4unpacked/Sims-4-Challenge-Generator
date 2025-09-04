@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Sims 4 Random Challenge Generator&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f2f2f2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #4A90E2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4A90E2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #357ABD;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.challenge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.challenge h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.challenge p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #555;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Sims 4 Random Challenge Generator&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;button&gt;🎲 Generate Challenge&lt;/button&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="challenge" id="challengeDisplay" style="display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="challengeTitle"&gt;&lt;br&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="challengeDescription"&gt;&lt;br&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const challenges = [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Hermit", description: "Stay home all week (except work/school)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Night Owl", description: "Only active from 7pm–6am." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Early Bird", description: "Must wake up before 6am every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Clean Freak", description: "Clean every dirty dish and mess immediately." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Couch Potato", description: "No exercise allowed this week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Showerless Week", description: "No showers or baths allowed!" },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Minimalist", description: "Sell/store all but 1 chair, 1 bed, 1 counter, 1 fridge, 1 toilet." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Maximalist", description: "Buy at least 5 decorative items every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Technology Addict", description: "Must watch TV, use the computer, or play on phone daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Tech-Free", description: "No electronics all week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Painter", description: "Paint at least 1 large painting daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Musician", description: "Play an instrument for 2+ Sim-hours per day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Writer", description: "Write a book (or practice writing) every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Chef", description: "Cook 1 new meal daily, no repeats." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Gourmet Chef", description: "Only eat cooked meals, no quick meals/snacks." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Mixologist", description: "Mix 5 drinks during the week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Fitness Buff", description: "Exercise daily (jog, workout, pushups)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Logic Master", description: "Play chess for 2+ Sim-hours daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Gardener", description: "Plant and tend at least 3 new plants." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Handyman", description: "Repair everything yourself, no replacements allowed." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Workaholic", description: "Complete all career tasks daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Slacker", description: "Don’t do career tasks at all this week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Hustler", description: "Make money only by odd jobs (painting, gardening, writing)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Investor", description: "Must buy one expensive item daily (at least §500)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Cheapskate", description: "Cannot spend money unless for food/bills." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Collector", description: "Only earn money through digging, fishing, or collecting." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Entrepreneur", description: "Earn at least §1,000 without going to work." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Promotion Seeker", description: "Must gain 1 promotion this week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Job Hopper", description: "Quit your job and start a new one." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Freelancer", description: "Make all money through self-employment activities." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Social Butterfly", description: "Meet 5 new Sims." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Recluse", description: "Speak to no new Sims." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Party Animal", description: "Throw 2 social events." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Host(ess)", description: "Invite a guest over daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Best Friend", description: "Become BFFs with someone new." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Enemy Maker", description: "Gain 2 enemies." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Gossip", description: "Spread rumors daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Caretaker", description: "Do something nice for another Sim daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Flirt", description: "Flirt with at least 3 different Sims." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Faithful", description: "No flirts or romances; spend time with your main partner only." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Romantic", description: "Go on 3 dates." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Heartbreaker", description: "Flirt with 3 Sims, then ghost them." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Matchmaker", description: "Set up 2 Sims together." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Proposal", description: "Get engaged this week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Wedding", description: "Host a wedding event." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Honeymooner", description: "Spend every night with your partner." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Jealous Lover", description: "Get jealous at least once." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Love Guru", description: "Give romantic advice." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Serial Romantic", description: "Kiss at least 3 different Sims." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Loyal Partner", description: "Interact only with your significant other." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Parent", description: "Spend 2 Sim-hours daily with your child(ren)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Babysitter", description: "Care for toddlers/kids every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Sibling Bond", description: "Strengthen sibling relationships." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Legacy", description: "Start a family tradition (like Sunday dinner)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Teacher", description: "Help with homework daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Storyteller", description: "Read a book to a child daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Disciplinarian", description: "Discipline your child at least twice." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Family Cook", description: "Cook meals for the household every night." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Family Time", description: "No eating alone; meals must be shared." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Provider", description: "Earn at least §2,000 for the family." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Traveler", description: "Visit a new lot daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Outdoorsman", description: "Spend at least 6 Sim-hours outdoors daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Fisher", description: "Catch 10 fish." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Park Ranger", description: "Visit every park in your world." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Librarian", description: "Visit the library daily and read." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Barfly", description: "Visit a bar every evening." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Gym Rat", description: "Visit the gym daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Nature Lover", description: "Go on daily walks/jogs." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Explorer", description: "Travel to at least 5 community lots." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Sleeper", description: "Sleep away from home at least 1 night." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Angry Week", description: "Try to get Angry at least once per day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Playful Week", description: "Become Playful daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Sad Week", description: "Make your Sim cry every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Happy Week", description: "End each day with a Happy mood." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Energized Week", description: "Exercise to stay energized daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Inspired Week", description: "Paint, write, or play music daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Focused Week", description: "Play chess or read logic books daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Confident Week", description: "Admire yourself in the mirror daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Flirty Week", description: "Stay Flirty every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Random Mood Week", description: "Roll dice daily to decide which emotion to target." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Shopaholic", description: "Buy something every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Prankster", description: "Perform mischief interactions daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Rulebreaker", description: "Break curfew/ignore rules daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Risk Taker", description: "WooHoo in a risky place (bush, closet, etc. if available)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Collector’s Curio", description: "Fill a shelf with new collectibles this week." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Animal Lover", description: "Befriend strays/critters." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Star", description: "Reach at least level 5 in Charisma." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Jester", description: "Make someone laugh every day." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Rival", description: "Compete with a household member daily (chess, games, etc.)." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Dreamer", description: "Nap instead of full sleep daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Vegetarian", description: "Only eat vegetarian meals." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Breadwinner", description: "Pay bills + save §1,000." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Poor Sim", description: "Reduce funds to under §1,000 and survive." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Homeless", description: "Delete your bed and shower; survive with public lots." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Fire Hazard", description: "Cook every meal on the stove." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Chaos Week", description: "Randomize outfits daily." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The House Arrest", description: "Lock doors; no leaving the lot at all." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The No Autonomy", description: "Turn off autonomy and micromanage." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The Yes Man", description: "Accept every invitation/call." },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ title: "The No Man", description: "Decline every invitation/call." }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function generateChallenge() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const randomIndex = Math.floor(Math.random() * challenges.length);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const challenge = challenges[randomIndex];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById('challengeTitle').textContent = challenge.title;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById('challengeDescription').textContent = challenge.description;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById('challengeDisplay').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Sims 4 Random Challenge Generator&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Your styling goes here... */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Sims 4 Random Challenge Generator&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Make sure the button calls the function --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="generateChallenge()"&gt;🎲 Generate Challenge&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="challenge" id="challengeDisplay" style="display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 id="challengeTitle"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p id="challengeDescription"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Your full list of challenges</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const challenges = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ title: "The Hermit", description: "Stay home all week (except work/school)." },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ title: "The Night Owl", description: "Only active from 7 pm–6 am." },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// ... (rest of your challenges)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ title: "The No Man", description: "Decline every invitation/call." }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function generateChallenge() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const randomIndex = Math.floor(Math.random() * challenges.length);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const challenge = challenges[randomIndex];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('challengeTitle').textContent = challenge.title;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('challengeDescription').textContent = challenge.description;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('challengeDisplay').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
