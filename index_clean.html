@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sims 4 Random Challenge Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      padding: 50px;
+      text-align: center;
+    }
+    h1 { color: #4A90E2; }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background-color: #4A90E2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover { background-color: #357ABD; }
+    .challenge {
+      margin-top: 40px;
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: left;
+    }
+    .challenge h2 { margin-top: 0; color: #333; }
+    .challenge p { font-size: 1.1em; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Sims 4 Random Challenge Generator</h1>
+  <button onclick="generateChallenge()">🎲 Generate Challenge</button>
+  <div class="challenge" id="challengeDisplay" style="display:none;">
+    <h2 id="challengeTitle"></h2>
+    <p id="challengeDescription"></p>
+  </div>
+  <script>
+    const challenges = [
+      { title: "The Hermit", description: "Stay home all week (except work/school)." },
+      { title: "The Night Owl", description: "Only active from 7pm–6am." },
+      { title: "The Early Bird", description: "Must wake up before 6am every day." },
+      { title: "The Clean Freak", description: "Clean every dirty dish and mess immediately." },
+      { title: "The Couch Potato", description: "No exercise allowed this week." },
+      { title: "The Showerless Week", description: "No showers or baths allowed!" },
+      { title: "The Minimalist", description: "Sell/store all but 1 chair, 1 bed, 1 counter, 1 fridge, 1 toilet." },
+      { title: "The Maximalist", description: "Buy at least 5 decorative items every day." },
+      { title: "The Technology Addict", description: "Must watch TV, use the computer, or play on phone daily." },
+      { title: "The Tech-Free", description: "No electronics all week." },
+      { title: "The Painter", description: "Paint at least 1 large painting daily." },
+      { title: "The Musician", description: "Play an instrument for 2+ Sim-hours per day." },
+      { title: "The Writer", description: "Write a book (or practice writing) every day." },
+      { title: "The Chef", description: "Cook 1 new meal daily, no repeats." },
+      { title: "The Gourmet Chef", description: "Only eat cooked meals, no quick meals/snacks." },
+      { title: "The Mixologist", description: "Mix 5 drinks during the week." },
+      { title: "The Fitness Buff", description: "Exercise daily (jog, workout, pushups)." },
+      { title: "The Logic Master", description: "Play chess for 2+ Sim-hours daily." },
+      { title: "The Gardener", description: "Plant and tend at least 3 new plants." },
+      { title: "The Handyman", description: "Repair everything yourself, no replacements allowed." },
+      { title: "The Workaholic", description: "Complete all career tasks daily." },
+      { title: "The Slacker", description: "Don’t do career tasks at all this week." },
+      { title: "The Hustler", description: "Make money only by odd jobs (painting, gardening, writing)." },
+      { title: "The Investor", description: "Must buy one expensive item daily (at least §500)." },
+      { title: "The Cheapskate", description: "Cannot spend money unless for food/bills." },
+      { title: "The Collector", description: "Only earn money through digging, fishing, or collecting." },
+      { title: "The Entrepreneur", description: "Earn at least §1,000 without going to work." },
+      { title: "The Promotion Seeker", description: "Must gain 1 promotion this week." },
+      { title: "The Job Hopper", description: "Quit your job and start a new one." },
+      { title: "The Freelancer", description: "Make all money through self-employment activities." },
+      { title: "The Social Butterfly", description: "Meet 5 new Sims." },
+      { title: "The Recluse", description: "Speak to no new Sims." },
+      { title: "The Party Animal", description: "Throw 2 social events." },
+      { title: "The Host(ess)", description: "Invite a guest over daily." },
+      { title: "The Best Friend", description: "Become BFFs with someone new." },
+      { title: "The Enemy Maker", description: "Gain 2 enemies." },
+      { title: "The Gossip", description: "Spread rumors daily." },
+      { title: "The Caretaker", description: "Do something nice for another Sim daily." },
+      { title: "The Flirt", description: "Flirt with at least 3 different Sims." },
+      { title: "The Faithful", description: "No flirts or romances; spend time with your main partner only." },
+      { title: "The Romantic", description: "Go on 3 dates." },
+      { title: "The Heartbreaker", description: "Flirt with 3 Sims, then ghost them." },
+      { title: "The Matchmaker", description: "Set up 2 Sims together." },
+      { title: "The Proposal", description: "Get engaged this week." },
+      { title: "The Wedding", description: "Host a wedding event." },
+      { title: "The Honeymooner", description: "Spend every night with your partner." },
+      { title: "The Jealous Lover", description: "Get jealous at least once." },
+      { title: "The Love Guru", description: "Give romantic advice." },
+      { title: "The Serial Romantic", description: "Kiss at least 3 different Sims." },
+      { title: "The Loyal Partner", description: "Interact only with your significant other." },
+      { title: "The Parent", description: "Spend 2 Sim-hours daily with your child(ren)." },
+      { title: "The Babysitter", description: "Care for toddlers/kids every day." },
+      { title: "The Sibling Bond", description: "Strengthen sibling relationships." },
+      { title: "The Legacy", description: "Start a family tradition (like Sunday dinner)." },
+      { title: "The Teacher", description: "Help with homework daily." },
+      { title: "The Storyteller", description: "Read a book to a child daily." },
+      { title: "The Disciplinarian", description: "Discipline your child at least twice." },
+      { title: "The Family Cook", description: "Cook meals for the household every night." },
+      { title: "The Family Time", description: "No eating alone; meals must be shared." },
+      { title: "The Provider", description: "Earn at least §2,000 for the family." },
+      { title: "The Traveler", description: "Visit a new lot daily." },
+      { title: "The Outdoorsman", description: "Spend at least 6 Sim-hours outdoors daily." },
+      { title: "The Fisher", description: "Catch 10 fish." },
+      { title: "The Park Ranger", description: "Visit every park in your world." },
+      { title: "The Librarian", description: "Visit the library daily and read." },
+      { title: "The Barfly", description: "Visit a bar every evening." },
+      { title: "The Gym Rat", description: "Visit the gym daily." },
+      { title: "The Nature Lover", description: "Go on daily walks/jogs." },
+      { title: "The Explorer", description: "Travel to at least 5 community lots." },
+      { title: "The Sleeper", description: "Sleep away from home at least 1 night." },
+      { title: "The Angry Week", description: "Try to get Angry at least once per day." },
+      { title: "The Playful Week", description: "Become Playful daily." },
+      { title: "The Sad Week", description: "Make your Sim cry every day." },
+      { title: "The Happy Week", description: "End each day with a Happy mood." },
+      { title: "The Energized Week", description: "Exercise to stay energized daily." },
+      { title: "The Inspired Week", description: "Paint, write, or play music daily." },
+      { title: "The Focused Week", description: "Play chess or read logic books daily." },
+      { title: "The Confident Week", description: "Admire yourself in the mirror daily." },
+      { title: "The Flirty Week", description: "Stay Flirty every day." },
+      { title: "The Random Mood Week", description: "Roll dice daily to decide which emotion to target." },
+      { title: "The Shopaholic", description: "Buy something every day." },
+      { title: "The Prankster", description: "Perform mischief interactions daily." },
+      { title: "The Rulebreaker", description: "Break curfew/ignore rules daily." },
+      { title: "The Risk Taker", description: "WooHoo in a risky place (bush, closet, etc. if available)." },
+      { title: "The Collector’s Curio", description: "Fill a shelf with new collectibles this week." },
+      { title: "The Animal Lover", description: "Befriend strays/critters." },
+      { title: "The Star", description: "Reach at least level 5 in Charisma." },
+      { title: "The Jester", description: "Make someone laugh every day." },
+      { title: "The Rival", description: "Compete with a household member daily (chess, games, etc.)." },
+      { title: "The Dreamer", description: "Nap instead of full sleep daily." },
+      { title: "The Vegetarian", description: "Only eat vegetarian meals." },
+      { title: "The Breadwinner", description: "Pay bills + save §1,000." },
+      { title: "The Poor Sim", description: "Reduce funds to under §1,000 and survive." },
+      { title: "The Homeless", description: "Delete your bed and shower; survive with public lots." },
+      { title: "The Fire Hazard", description: "Cook every meal on the stove." },
+      { title: "The Chaos Week", description: "Randomize outfits daily." },
+      { title: "The House Arrest", description: "Lock doors; no leaving the lot at all." },
+      { title: "The No Autonomy", description: "Turn off autonomy and micromanage." },
+      { title: "The Yes Man", description: "Accept every invitation/call." },
+      { title: "The No Man", description: "Decline every invitation/call." }
+    ];
+    function generateChallenge() {
+      const randomIndex = Math.floor(Math.random() * challenges.length);
+      const challenge = challenges[randomIndex];
+      document.getElementById('challengeTitle').textContent = challenge.title;
+      document.getElementById('challengeDescription').textContent = challenge.description;
+      document.getElementById('challengeDisplay').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
